@@ -24,8 +24,6 @@ public class Base {
     public void loadURL() // getting URL from string(Browser factory)
     {
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
     }
 
     public WebDriver loadDriver() {
@@ -50,7 +48,6 @@ public class Base {
 
     public static String captureScreenshot(WebDriver driver) throws IOException
     {
-
         String pattern = "yyyy-MM-dd_HHmmss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 

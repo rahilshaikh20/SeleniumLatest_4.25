@@ -16,12 +16,12 @@ public class TestCase4 extends ExtentReportSetUp
     public void testCase4()
     {
         test=extent.createTest("TC_0004");
+        test.info("**** This is a 4th TC ****");
         test.info("4th TC started");
         driver= base.loadDriver();
         base.loadURL();
         System.out.println(driver.getTitle());
 
-        //Assert.fail("This failed by the user");
         test.info("Title is: "+driver.getTitle());
         Assert.fail("Failed by the user");
 
