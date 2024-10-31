@@ -40,11 +40,20 @@ public class ExtentReportSetUp {
     public void getResult(ITestResult result) throws NoSuchFieldException, IllegalAccessException, IOException {
         if(result.getStatus() == ITestResult.FAILURE)
         {
-            driver=(WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-            //Get the driver instance from the running Test Class*/
+            try {
+                driver=(WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+                //Get the driver instance from the running Test Class*/
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            if(driver!=null)
+            { //take screenshot if driver instance is not null
             String screenshot =Base.captureScreenshot(driver);
             test.addScreenCaptureFromPath(screenshot);
-
+            }
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
             test.fail(result.getThrowable());
 
