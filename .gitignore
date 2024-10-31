@@ -36,11 +36,14 @@ bin/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
+### Others ###
+*.PNG
+*.JPG
 
 ### Mac OS ###
 .DS_Store
 
 ### Folders ###
 SparkReports/*
+Screenshots/*
+

@@ -7,14 +7,15 @@ import org.testng.annotations.Test;
 import utilities.Base;
 import utilities.ExtentReportSetUp;
 
+import java.io.IOException;
+
 public class TestCase4 extends ExtentReportSetUp
 {
     public WebDriver driver;
     Base base =new Base();
 
     @Test
-    public void testCase4()
-    {
+    public void testCase4() throws IOException {
         test=extent.createTest("TC_0004");
         test.info("**** This is a 4th TC ****");
         test.info("4th TC started");
