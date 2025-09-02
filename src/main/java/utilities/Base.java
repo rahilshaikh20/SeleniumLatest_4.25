@@ -67,6 +67,8 @@ public class Base {
         String date = simpleDateFormat.format(new Date());
         String imageWithPath=System.getProperty("user.dir")+"\\Screenshots"+"\\image_"+date+".PNG";
 
+        //**Note: // for mac and \\ for Windows
+
         FileHandler.createDir(new File(System.getProperty("user.dir")+"\\Screenshots"));
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshotFile, new File(imageWithPath));
