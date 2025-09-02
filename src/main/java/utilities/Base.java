@@ -43,8 +43,11 @@ public class Base {
             driver = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("Chrome")) {
+
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
 
         } else if (browserName.equalsIgnoreCase("IE")) {
             WebDriverManager.iedriver().setup();
