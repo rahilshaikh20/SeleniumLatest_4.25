@@ -15,7 +15,7 @@ public class TestCase4 extends ExtentReportSetUp
     Base base =new Base();
 
     @Test
-    public void testCase4() throws IOException {
+    public void testCase4() throws IOException, InterruptedException {
         test=extent.createTest("TC_0004");
         test.info("**** This is a 4th TC ****");
         test.info("4th TC started");
@@ -25,6 +25,7 @@ public class TestCase4 extends ExtentReportSetUp
 
         test.info("Title is: "+driver.getTitle());
         Assert.fail("Failed by the user");
+        Thread.sleep(5000);
 
     }
     @AfterClass

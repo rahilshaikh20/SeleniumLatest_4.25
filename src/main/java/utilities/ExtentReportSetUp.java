@@ -37,7 +37,7 @@ public class ExtentReportSetUp {
         htmlReporter.config().setTimelineEnabled(true);
     }
     @AfterMethod
-    public void getResult(ITestResult result) throws NoSuchFieldException, IllegalAccessException, IOException {
+    public void getResult(ITestResult result) throws NoSuchFieldException, IllegalAccessException, IOException, InterruptedException {
         if(result.getStatus() == ITestResult.FAILURE)
         {
             try {
@@ -52,6 +52,7 @@ public class ExtentReportSetUp {
             if(driver!=null)
             { //take screenshot if driver instance is not null
             String screenshot =Base.captureScreenshot(driver);
+            System.out.println(screenshot);
             test.addScreenCaptureFromPath(screenshot);
             }
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));

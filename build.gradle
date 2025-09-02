@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.2.0'   // Spring Boot plugin
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'org.example'
@@ -16,13 +18,18 @@ repositories {
 dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
     implementation 'org.testng:testng:7.7.0'
-    implementation 'com.aventstack:extentreports:5.0.9'
+    implementation 'com.aventstack:extentreports:5.1.2'
     implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    // Spring Boot Starter (Web)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Spring Boot Starter (Test)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
     useTestNG() {
           suites 'src/test/resources/testng.xml'
     }
+    //useJUnitPlatform()
 }
 

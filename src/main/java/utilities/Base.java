@@ -23,7 +23,7 @@ public class Base {
     Properties prop = new Properties();
     public FileInputStream fis;
     //String URL = "https://www.manutd.com/"; // Website name to be launched
-    String browserName = "Chrome"; // Enter the Browser name
+    //String browserName = "Chrome"; // Enter the Browser name
 
     public void loadURL() throws IOException // getting URL from string(Browser factory)
     {
