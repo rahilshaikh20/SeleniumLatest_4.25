@@ -1,7 +1,14 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.0'   // Spring Boot plugin
+    /*id 'org.springframework.boot' version '3.2.0'   // Spring Boot plugin
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'*/
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23) // adjust if needed
+    }
 }
 
 group = 'org.example'
@@ -16,15 +23,20 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
-    implementation 'org.testng:testng:7.7.0'
+    implementation("org.seleniumhq.selenium:selenium-java:4.35.0")
+    implementation("org.testng:testng:7.11.0")
     implementation 'com.aventstack:extentreports:5.1.2'
     implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
     // Spring Boot Starter (Web)
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    /*implementation 'org.springframework.boot:spring-boot-starter-web'
     // Spring Boot Starter (Test)
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'*/
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
+/*
+jacoco {
+    toolVersion = "0.8.12" // latest stable
+}*/
 
 test {
     useTestNG() {
@@ -32,4 +44,14 @@ test {
     }
     //useJUnitPlatform()
 }
+/*
+tasks.jacocoTestReport {
+    dependsOn(test) // run tests first
+
+    reports {
+        xml.required.set(true)    // for CI/SonarQube
+        csv.required.set(true)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+    }
+}*/
 

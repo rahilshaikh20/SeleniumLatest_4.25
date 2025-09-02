@@ -2,6 +2,7 @@ package testCases;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import utilities.Base;
 import utilities.ExtentReportSetUp;
@@ -25,5 +26,9 @@ public class TestCase3 extends ExtentReportSetUp {
 
         Assert.fail();
     }
-
+    @AfterClass
+    public void driverQuit()
+    {
+        driver.quit();
+    }
 }
