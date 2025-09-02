@@ -2,7 +2,7 @@
 <suite name="Suite Name">
     <test name="Test Name">
         <classes>
-            <class name="testCases.TestCase1"/>
+            <class name="testCases.TestCase6"/>
             <class name="testCases.TestCase7"/>
             <class name="testCases.TestCase8"/>
 
