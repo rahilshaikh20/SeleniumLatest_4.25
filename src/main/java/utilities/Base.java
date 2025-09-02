@@ -78,7 +78,8 @@ public class Base {
     }
     public Properties loadProperties() throws IOException {
         // prop = new Properties();
-        fis = new FileInputStream(System.getProperty("user.dir") + "\\Base.properties");
+         //**Note: // for mac and \\ for Windows
+        fis = new FileInputStream(System.getProperty("user.dir") + "//Base.properties");
         prop.load(fis);
         return prop;
     }
