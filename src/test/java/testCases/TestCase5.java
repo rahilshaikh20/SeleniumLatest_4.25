@@ -25,6 +25,7 @@ public class TestCase5 extends ExtentReportSetUp {
 
         //Assert.assertTrue(driver.getPageSource().contains("My Actions"));
         System.out.println(driver.getTitle());
+        test.pass(driver.getTitle());
         Thread.sleep(3000);
 
 

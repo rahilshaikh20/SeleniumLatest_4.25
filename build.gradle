@@ -5,11 +5,11 @@ plugins {
     id 'jacoco'*/
 }
 
-java {
+/*java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21) // adjust if needed
     }
-}
+}*/
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
@@ -26,7 +26,7 @@ dependencies {
     implementation("org.seleniumhq.selenium:selenium-java:4.35.0")
     implementation("org.testng:testng:7.11.0")
     implementation 'com.aventstack:extentreports:5.1.2'
-    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    implementation("io.github.bonigarcia:webdrivermanager:6.2.0")
     // Spring Boot Starter (Web)
     /*implementation 'org.springframework.boot:spring-boot-starter-web'
     // Spring Boot Starter (Test)

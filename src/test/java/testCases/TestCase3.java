@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import utilities.Base;
+import utilities.DriverFactory;
 import utilities.ExtentReportSetUp;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.io.IOException;
 public class TestCase3 extends ExtentReportSetUp {
 
     public WebDriver driver;
-    Base base =new Base();
+    DriverFactory driverFactory = new DriverFactory();
     @Test
     public void TC3() throws IOException, InterruptedException {
         System.out.println("*********TC 3 Executed !! ******");
@@ -20,9 +21,9 @@ public class TestCase3 extends ExtentReportSetUp {
 
         test = extent.createTest("TC_0003");
         test.info("Verify Manu Page");
-        driver = base.loadDriver();
+        driver=driverFactory.loadBrowserDriver();
         driver.get("https://www.manutd.com/");
-        driver.manage().window().maximize();
+        test.pass(driver.getTitle());
 
         Assert.fail();
     }
