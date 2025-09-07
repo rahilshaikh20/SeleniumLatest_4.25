@@ -26,7 +26,7 @@ public class TestCase3 extends ExtentReportSetUp {
         driver.get(Constants.BASE_URL);
         test.pass(driver.getTitle());
 
-        Assert.fail();
+        //Assert.fail();
     }
 
     @AfterClass

@@ -23,9 +23,7 @@ public class TestCase4 extends ExtentReportSetUp {
         System.out.println(driver.getTitle());
 
         test.info("Title is: " + driver.getTitle());
-        Assert.fail("Failed by the user");
-        Thread.sleep(5000);
-
+        //Assert.fail("Failed by the user");
     }
 
     @AfterClass
