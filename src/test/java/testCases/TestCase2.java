@@ -4,15 +4,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.Test;
 
 public class TestCase2 {
 
 
-
     public static void main(String[] args) {
-       System.setProperty("webdriver.edge.driver", "C:\\Users\\shaikh_ra\\Downloads\\EdgeDriver\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\shaikh_ra\\Downloads\\EdgeDriver\\msedgedriver.exe");
         WebDriverManager.edgedriver().setup();
         // Create EdgeOptions and set headless mode
         EdgeOptions options = new EdgeOptions();
@@ -31,7 +28,6 @@ public class TestCase2 {
         System.out.println("Title: " + driver.getTitle());
 
     }
-
 
 
 }

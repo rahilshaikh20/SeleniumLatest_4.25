@@ -1,4 +1,5 @@
 package utilities;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
@@ -30,10 +31,10 @@ public class PasswordEncryptor {
 
     public static void main(String[] args) throws Exception {
 
-        String encryptedPassword = PasswordEncryptor.encrypt("Rahil@123",SecretKey);
+        String encryptedPassword = PasswordEncryptor.encrypt("Rahil@123", SecretKey);
         System.out.println(encryptedPassword); // Use this encrypted password in properties file
 
         String decryptedPassword = PasswordEncryptor.decrypt(encryptedPassword, SecretKey);
-        System.out.println("!!Decrypted password is: "+decryptedPassword);
+        System.out.println("!!Decrypted password is: " + decryptedPassword);
     }
 }

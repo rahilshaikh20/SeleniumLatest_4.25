@@ -1,25 +1,24 @@
 package testCases;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import pages.HRMLoginPage;
 import pages.HRMLoginPageFactory;
-import utilities.Base;
+import utilities.DriverFactory;
 import utilities.ExtentReportSetUp;
 
 import java.io.IOException;
 
 public class TestCase5 extends ExtentReportSetUp {
     public WebDriver driver;
-    Base base = new Base();
+    DriverFactory driverFactory = new DriverFactory();
+
     @Test
     public void TC1() throws InterruptedException, IOException {
         test = extent.createTest("TC_0005");
         test.info("Verify user login using Page Factory");
-        driver=base.loadDriver();
-        base.loadURL();
+        driver = driverFactory.loadBrowserDriver();
+        driverFactory.launchURL();
         HRMLoginPageFactory hrmLoginPage = new HRMLoginPageFactory(driver);
         hrmLoginPage.loginPageFactory("Admin", "admin123");
 
@@ -30,9 +29,9 @@ public class TestCase5 extends ExtentReportSetUp {
 
 
     }
+
     @AfterClass
-    public void driverQuit()
-    {
+    public void driverQuit() {
         driver.quit();
     }
 
