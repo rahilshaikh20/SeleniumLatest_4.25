@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/rahilshaikh20/SeleniumLatest_4.25.git'
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                sh 'chmod +x ./gradlew'
+                sh './gradlew clean test'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build and tests completed successfully.'
+
+            publishHTML(target: [
+                reportDir: 'SparkReport',
+                reportFiles: 'Rahil_Spark_Report.html',
+                reportName: 'TestSparkReport',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
+        }
+
+        failure {
+            echo '❌ Build or tests failed.'
+        }
+    }
+}
