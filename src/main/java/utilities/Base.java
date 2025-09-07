@@ -72,8 +72,8 @@ public class Base {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
         String imageWithPath=System.getProperty("user.dir")+"//Screenshots"+"//image_"+date+".PNG"; //for windows use \\
-
         FileHandler.createDir(new File(System.getProperty("user.dir")+"//Screenshots")); //for windows use \\
+        //**Note: // for mac and \\ for Windows
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshotFile, new File(imageWithPath));
 
@@ -82,7 +82,9 @@ public class Base {
     }
     public static Properties loadProperties() throws IOException {
         // prop = new Properties();
-        fis = new FileInputStream(System.getProperty("user.dir") + "\\Base.properties"); //for windows use \\
+
+         //**Note: // for mac and \\ for Windows
+        fis = new FileInputStream(System.getProperty("user.dir") + "//Base.properties");
         prop.load(fis);
         return prop;
     }
