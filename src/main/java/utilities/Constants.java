@@ -22,7 +22,7 @@ public class Constants {
     // File paths
     public static final String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "//Screenshots";
     public static final String PROPERTIES_FILE_PATH = System.getProperty("user.dir") + "//Config.properties";
-    public static final String EXTENT_REPORTS_PATH = System.getProperty("user.dir") + "//SparkReport//Rahil_Spark_Report.html";
+    public static final String EXTENT_REPORTS_PATH = System.getProperty("user.dir") + "//SparkReports//Rahil_Spark_Report.html";
     /**** For windows use \\ , for Mac use // ***********/
 
     //Extent Repots parameters
