@@ -30,7 +30,6 @@ public class TC_002_POSTTestCase {
        resp =EndPoints.methodPOST(postData);
        resp.prettyPrint();
        System.out.println("Status code is: "+resp.statusCode());
-
    }
 
    @AfterTest

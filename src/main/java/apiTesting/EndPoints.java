@@ -28,9 +28,12 @@ public class EndPoints {
     }
     public static Response methodPOST(PostData payload)
     {
-        Response response = given().contentType(ContentType.JSON)
-                .accept(ContentType.JSON).body(payload).when()
+        Response response = given().
+                contentType(ContentType.JSON)
+                .accept(ContentType.JSON).body(payload)
+                .when()
                 .post(Routes.URI+Routes.POST_END_POINT);
+                //.then().statusCode(200);
         return response;
 
     }
