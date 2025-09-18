@@ -1,0 +1,38 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+# Build job
+build-job:
+  stage: build
+  image: gradle:8-jdk17   # Use Gradle + Java 17 Docker image
+  script:
+    - gradle clean build
+  artifacts:
+    paths:
+      - build/libs/*.jar   # Save built JARs as artifacts
+    expire_in: 1 week
+
+# Test job
+test-job:
+  stage: test
+  image: gradle:8-jdk17
+  script:
+    - gradle test
+  artifacts:
+    reports:
+      junit: build/test-results/test/TEST-*.xml
+
+# Deploy job (runs only on main branch)
+deploy-job:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "Deploying app..."
+    # add deployment steps (e.g., scp, docker push, k8s apply)
+  only:
+    - main
