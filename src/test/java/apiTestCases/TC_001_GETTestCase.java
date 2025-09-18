@@ -1,6 +1,5 @@
 package apiTestCases;
 import apiTesting.EndPoints;
-import io.restassured.*;
 import io.restassured.response.Response;
 import org.testng.Assert;
 

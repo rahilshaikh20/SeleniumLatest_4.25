@@ -14,6 +14,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 public class ExtentReportSetUp {
     public static ExtentSparkReporter htmlReporter;
@@ -22,7 +23,7 @@ public class ExtentReportSetUp {
     WebDriver driver;
 
     @BeforeSuite
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         htmlReporter = new ExtentSparkReporter(Constants.EXTENT_REPORTS_PATH);
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
