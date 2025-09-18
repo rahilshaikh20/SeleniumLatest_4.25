@@ -4,6 +4,7 @@ import apiTesting.PostData;
 import apiTesting.Routes;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -32,7 +33,7 @@ public class TC_002_POSTTestCase {
        System.out.println("Status code is: "+resp.statusCode());
    }
 
-   @AfterTest
+   @AfterClass
     public void getResponseJSONdata()
    {    //Get specific data from response by traversing the JSON path
        JsonPath extractor = resp.jsonPath();
