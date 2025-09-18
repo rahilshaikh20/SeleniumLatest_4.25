@@ -37,7 +37,8 @@ jacoco {
 
 test {
     useTestNG() {
-       suites 'src/test/resources/testng.xml'
+      // suites 'src/test/resources/testng.xml'
+        suites 'src/test/resources/testng_PassedTCs.xml'
     }
     //useJUnitPlatform()
 }

@@ -2,15 +2,8 @@
 <suite name="Suite Name">
     <test name="Test Name">
         <classes>
-            <class name="testCases.TestCase1"/>
-            <class name="testCases.TestCase2"/>
-            <class name="testCases.TestCase3"/>
-            <class name="testCases.TestCase4"/>
-            <class name="testCases.TestCase5"/>
-            <class name="testCases.TestCase6"/>
-            <class name="testCases.TestCase7"/>
-            <class name="testCases.TestCase8"/>
-            <class name="apiTestCases.TC_002_POSTTestCase"/>
+            <class name="testCases.TestCase9"/>
+
         </classes>
     </test>
 </suite>
