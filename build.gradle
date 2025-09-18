@@ -27,10 +27,6 @@ dependencies {
     implementation("org.testng:testng:7.11.0")
     implementation 'com.aventstack:extentreports:5.1.2'
     implementation("io.github.bonigarcia:webdrivermanager:6.2.0")
-    // Spring Boot Starter (Web)
-    /*implementation 'org.springframework.boot:spring-boot-starter-web'
-    // Spring Boot Starter (Test)
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'*/
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
     implementation("io.rest-assured:rest-assured:5.4.0")
 }
