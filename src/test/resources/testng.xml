@@ -11,6 +11,7 @@
             <class name="testCases.TestCase7"/>
             <class name="testCases.TestCase8"/>
             <class name="testCases.TestCase9"/>
+            <class name="testCases.TestCase10"/>
         </classes>
     </test>
 </suite>

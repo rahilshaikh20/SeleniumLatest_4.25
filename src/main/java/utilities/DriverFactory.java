@@ -61,6 +61,7 @@ public class DriverFactory {
 
     public void tearDown() {
 
+        System.out.println("** Tear down initialized!**");
         if (driver != null)
         {
             ExtentReportSetUp.test.info("Browser is closed");
