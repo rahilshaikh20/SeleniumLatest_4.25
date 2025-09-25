@@ -17,7 +17,7 @@ public class TestCase10 extends ExtentReportSetUp {
 
     }
     @AfterClass
-    public void tearDomwnTC10()
+    public void tearDownTC10()
     {
         driverFactory.tearDown();
     }
