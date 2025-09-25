@@ -9,10 +9,18 @@ public class TestCase10 extends ExtentReportSetUp {
 
     DriverFactory driverFactory =new DriverFactory();
     @Test
-    public void TC_10()
+    public void TC_10_1()
     {
-        test = extent.createTest("TC_0010");
-        test.info("*** TC_010 started !! ****");
+        test = extent.createTest("TC_0010.1");
+        test.info("*** TC_010.1 started !! ****");
+        System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
+
+    }
+    @Test
+    public void TC_10_2()
+    {
+        test = extent.createTest("TC_0010.2");
+        test.info("*** TC_010.2 started !! ****");
         System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
 
     }
