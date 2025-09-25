@@ -24,6 +24,14 @@ public class TestCase10 extends ExtentReportSetUp {
         System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
 
     }
+    @Test
+    public void TC_10_3()
+    {
+        test = extent.createTest("TC_0010.3");
+        test.info("*** TC_010.3 started !! ****");
+        System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
+
+    }
     @AfterClass
     public void tearDownTC10()
     {
