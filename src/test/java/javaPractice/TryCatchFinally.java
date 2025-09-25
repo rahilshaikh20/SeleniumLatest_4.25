@@ -2,7 +2,7 @@ package javaPractice;
 
 public class TryCatchFinally {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArithmeticException{
 
         try {
             int i = 9 / 0;
@@ -12,5 +12,7 @@ public class TryCatchFinally {
             System.out.println("Finally executed!!");
         }
         System.out.println("Is this executed?");
+
+        throw new RuntimeException("This is runtime by Rahil !");
     }
 }

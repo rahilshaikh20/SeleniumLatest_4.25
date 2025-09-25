@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterClass;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,6 +20,8 @@ public class DriverFactory {
     public Properties prop = new Properties();
     WebDriver driver;
     ConfigReader configReader = new ConfigReader();
+
+
 
     public WebDriver loadBrowserDriver() throws IOException {
         //prop=DriverFactory.this.loadProperties();
@@ -54,6 +57,16 @@ public class DriverFactory {
         prop = configReader.loadConfigProperties();
         String url = prop.getProperty("URL");
         driver.get(url);
+    }
+
+    public void tearDown() {
+
+        if (driver != null)
+        {
+            ExtentReportSetUp.test.info("Browser is closed");
+            System.out.println("** Browser quit **");
+            driver.quit();
+        }
     }
 
 }

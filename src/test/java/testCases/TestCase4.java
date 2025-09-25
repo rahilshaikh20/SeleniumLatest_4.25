@@ -25,9 +25,8 @@ public class TestCase4 extends ExtentReportSetUp {
         test.info("Title is: " + driver.getTitle());
         //Assert.fail("Failed by the user");
     }
-
     @AfterClass
-    public void tearDown() {
-        driver.quit();
+    public void driverQuit() {
+        driverFactory.tearDown();
     }
 }

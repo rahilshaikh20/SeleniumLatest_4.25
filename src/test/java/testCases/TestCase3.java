@@ -28,9 +28,8 @@ public class TestCase3 extends ExtentReportSetUp {
 
         //Assert.fail();
     }
-
     @AfterClass
     public void driverQuit() {
-        driver.quit();
+        driverFactory.tearDown();
     }
 }

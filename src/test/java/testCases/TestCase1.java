@@ -35,7 +35,7 @@ public class TestCase1 extends ExtentReportSetUp {
 
     @AfterClass
     public void driverQuit() {
-        driver.quit();
+        driverFactory.tearDown();
     }
 
 

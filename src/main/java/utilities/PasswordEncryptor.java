@@ -4,10 +4,11 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
+import static utilities.Constants.*;
+
 public class PasswordEncryptor {
 
-    private static final String ALGORITHM = "AES";
-    private static final String SecretKey = "12345678ABCJ3458";
+
 
     // Make sure the key is 16 bytes (128-bit) long
     private static SecretKeySpec getKey(String secret) {
@@ -31,10 +32,10 @@ public class PasswordEncryptor {
 
     public static void main(String[] args) throws Exception {
 
-        String encryptedPassword = PasswordEncryptor.encrypt("Rahil@123", SecretKey);
+        String encryptedPassword = PasswordEncryptor.encrypt("Rahil@123", SECRET_KEY);
         System.out.println(encryptedPassword); // Use this encrypted password in properties file
 
-        String decryptedPassword = PasswordEncryptor.decrypt(encryptedPassword, SecretKey);
+        String decryptedPassword = PasswordEncryptor.decrypt(encryptedPassword, SECRET_KEY);
         System.out.println("!!Decrypted password is: " + decryptedPassword);
     }
 }

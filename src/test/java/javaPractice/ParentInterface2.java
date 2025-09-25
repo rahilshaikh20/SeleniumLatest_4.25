@@ -10,7 +10,7 @@ public interface ParentInterface2 {
 
     }
 
-    public void method4();
+     void method4();
 
 
 }

@@ -10,7 +10,7 @@
             <class name="testCases.TestCase6"/>
             <class name="testCases.TestCase7"/>
             <class name="testCases.TestCase8"/>
-            <class name="apiTestCases.TC_002_POSTTestCase"/>
+            <class name="testCases.TestCase9"/>
         </classes>
     </test>
 </suite>
