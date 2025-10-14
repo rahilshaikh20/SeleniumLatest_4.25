@@ -16,6 +16,7 @@ public class HRMLoginPage {
     public void login(String userName, String password) {
         driver.findElement(userNameTextbox).sendKeys(userName);
         driver.findElement(passwordTextbox).sendKeys(password);
+        System.out.println(userName+" "+password+" entered");
         driver.findElement(submit).click();
 
     }

@@ -1,40 +1,25 @@
 package testCases;
 
-import org.testng.annotations.AfterClass;
+import com.aventstack.extentreports.ExtentTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.DriverFactory;
+import pages.HRMLoginPage;
 import utilities.ExtentReportSetUp;
 
-public class TestCase10 extends ExtentReportSetUp {
+public class TestCase10 extends BaseTest {
 
-    DriverFactory driverFactory =new DriverFactory();
     @Test
-    public void TC_10_1()
-    {
-        test = extent.createTest("TC_0010.1");
-        test.info("*** TC_010.1 started !! ****");
-        System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
+    public void TC10()  {
+        ExtentTest testLogger = getExtent().createTest("TestCase_010");
+        setTest(testLogger);
+        testLogger.info("Verify data from config ");
+        System.out.println("*** TC started ***");
 
-    }
-    @Test
-    public void TC_10_2()
-    {
-        test = extent.createTest("TC_0010.2");
-        test.info("*** TC_010.2 started !! ****");
-        System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
+     /*   String name = testDataProp.getProperty("name");
+        String age = testDataProp.getProperty("age");
 
-    }
-    @Test
-    public void TC_10_3()
-    {
-        test = extent.createTest("TC_0010.3");
-        test.info("*** TC_010.3 started !! ****");
-        System.out.println(" *****  TC PASSED !!!!");test.pass("TC Passed");
+        testLogger.info("User name: "+name+" | Age: "+age);
+        System.out.println("User name: "+name+" | Age: "+age);*/
 
-    }
-    @AfterClass
-    public void tearDownTC10()
-    {
-        driverFactory.tearDown();
     }
 }

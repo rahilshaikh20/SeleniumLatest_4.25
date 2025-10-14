@@ -9,8 +9,8 @@ public class ConfigReader {
     protected FileInputStream fis;
     protected Properties prop = new Properties();
 
-    public Properties loadConfigProperties() throws IOException {
-        fis = new FileInputStream(Constants.PROPERTIES_FILE_PATH);
+    public Properties loadConfigProperties(String filePath) throws IOException {
+        fis = new FileInputStream(filePath);
         prop.load(fis);
         return prop;
     }
