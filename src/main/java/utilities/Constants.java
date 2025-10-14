@@ -16,12 +16,13 @@ public class Constants {
     //Date Pattern for Screenshots
     public static final String DATE_PATTERN = "yyyy-MM-dd_HHmmss";
     // File paths
-    public static final String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "//Screenshots";
+    public static final String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "/Screenshots/";
     public static final String CONFIG_PROPERTIES_FILE_PATH = System.getProperty("user.dir") +
             "/src/test/resources/config/Config.properties";
     public static final String TEST_DATA_PROPERTIES_FILE_PATH = System.getProperty("user.dir") +
             "/src/test/resources/testData/TestData.properties";
-    public static final String EXTENT_REPORTS_PATH = System.getProperty("user.dir") + "/SparkReports/Rahil_New_Spark_Report.html";
+    public static final String EXTENT_REPORTS_PATH = System.getProperty("user.dir") +
+            "/SparkReports/Rahil_New_Spark_Report.html";
     /**** For windows use \\ , for Mac use '//' or single forward slash '/' ***********/
     //Extent Repots parameters
     public static final String EXTENT_REPORTS_NAME = "Gradle SPARK Report";

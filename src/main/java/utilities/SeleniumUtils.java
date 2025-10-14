@@ -10,28 +10,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
 public class SeleniumUtils {
     public WebDriver driver;
-
     public SeleniumUtils(WebDriver driver) {
         this.driver = driver;
     }
-
-    public static String captureScreenshot(WebDriver driver) throws IOException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constants.DATE_PATTERN);
-        String date = simpleDateFormat.format(new Date());
-        String imageWithPath = Constants.SCREENSHOT_FOLDER + "//image_" + date + ".PNG";
-        FileHandler.createDir(new File(Constants.SCREENSHOT_FOLDER));
-        //**Note: Use // for mac and \\ for Windows
-        File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenshotFile, new File(imageWithPath));
-
-        return imageWithPath;
-
+    public static String takeScreenshot(WebDriver driver) throws IOException {
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String screenshotDir = Constants.SCREENSHOT_FOLDER;
+        Files.createDirectories(Paths.get(screenshotDir));
+        String screenshotPath = screenshotDir +  "_" + System.currentTimeMillis() + ".png";
+        Files.copy(srcFile.toPath(), Paths.get(screenshotPath));
+        return screenshotPath;
     }
 
     public boolean isElementPresent(By Locator) {
