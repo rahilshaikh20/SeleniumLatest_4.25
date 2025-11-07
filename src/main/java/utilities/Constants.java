@@ -31,7 +31,7 @@ public class Constants {
     public static final String ALGORITHM = "AES";
     public static final String SECRET_KEY = "12345678ABCJ3458";
     // Browser run mode
-    public static final String CHROME_RUN_HEADLESS_MODE = "No";
+    public static final String CHROME_RUN_HEADLESS_MODE = "Yes";
     public static final String FIREFOX = "firefox";
     // Other constants
     public static final String TEST_ENV = "qa";
