@@ -3,8 +3,7 @@ package testCases;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HRMLoginPage;
-import utilities.ExtentReportSetUp;
+import utilities.ExtentManager;
 
 
 
@@ -12,7 +11,7 @@ public class TestCase10 extends BaseTest {
 
     @Test
     public void TC10()  {
-        ExtentTest test = ExtentReportSetUp.getTest();
+        ExtentTest test = ExtentManager.getTest();
         test.info("Test for data.properties");
 
         String name = testDataProp.getProperty("name");

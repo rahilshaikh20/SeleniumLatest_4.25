@@ -5,14 +5,14 @@ import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HRMLoginPage;
-import utilities.ExtentReportSetUp;
+import utilities.ExtentManager;
 
 public class TestCase12 extends BaseTest {
 
   @Test
     public void TC12() throws InterruptedException {
 
-      ExtentTest test = ExtentReportSetUp.getTest();
+      ExtentTest test = ExtentManager.getTest();
       test.info("Verify user login via Base Test 12");
       boolean userTextBoxPresent = seleniumUtils.isElementPresent(HRMLoginPage.userNameTextbox);
         System.out.println("Is UserTextBox Present (via POM)?: " + userTextBoxPresent);

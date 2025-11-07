@@ -1,11 +1,10 @@
 package testCases;
 
 import com.aventstack.extentreports.ExtentTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.ExtentReportSetUp;
+import utilities.ExtentManager;
 
-import static utilities.ExtentReportSetUp.extent;
+import static utilities.ExtentManager.extent;
 
 
 public class TestCase9 extends BaseTest {
@@ -13,8 +12,8 @@ public class TestCase9 extends BaseTest {
     @Test
     public void TC_9_1()
     {
-        //ExtentTest test = ExtentReportSetUp.getTest();
-        ExtentTest test = extent.createTest("TestCase_009","Description of TC_9");
+        ExtentTest test = ExtentManager.getTest();
+        //ExtentTest test = extent.createTest("TestCase_009","Description of TC_9");
 
         test.info("*** TC_009.1 started !! ****");
         test.pass("*** *****  TC 9.1 PASSED !!!!");

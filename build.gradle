@@ -29,6 +29,8 @@ dependencies {
     implementation("io.github.bonigarcia:webdrivermanager:6.2.0")
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
     implementation("io.rest-assured:rest-assured:5.4.0")
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
 }
 /*
 jacoco {
@@ -37,8 +39,7 @@ jacoco {
 
 test {
     useTestNG() {
-      // suites 'src/test/resources/testng.xml'
-        suites 'src/test/resources/testRunner/testng_PassedTCs.xml'
+              suites 'src/test/resources/testRunner/testng_PassedTCs.xml'
     }
     //useJUnitPlatform()
 }
